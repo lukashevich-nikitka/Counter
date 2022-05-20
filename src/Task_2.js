@@ -8,7 +8,7 @@ function App() {
   <MainCounter  addCounter = {(el) => setState([...state, el])} 
   deleteCounter = {() => setState([...state].splice(1,state.length-1))}
   value = {state.length}/>
-  {state.map((index) => <Counter key={index}/>)}
+  {state.map((_, index) => <Counter key={index}/>)}
   </>
 }
 
