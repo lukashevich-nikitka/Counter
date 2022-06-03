@@ -5,7 +5,7 @@ import { Button } from '@material-ui/core';
 import { Paper } from '@material-ui/core';
 import { useForm } from "react-hook-form";
 
-function App() {
+function FivethPage() {
     return (
         <>
         <Inputs />
@@ -53,4 +53,4 @@ function DisplayInputs(props) {
     )
 }
 
-export default App;
+export { FivethPage }

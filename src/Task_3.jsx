@@ -1,7 +1,7 @@
 import './App_Task3.css';
 import React, {useState} from 'react';
 
-function App() {
+function ThirdPage() {
     return (
         <div className='verification-wrapper'>
             <Inputs />
@@ -47,4 +47,4 @@ function DataDisplay(props) {
     )
 }
 
-export default App;
+export { ThirdPage }

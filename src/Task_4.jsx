@@ -4,7 +4,7 @@ import { TextField } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 import { Paper } from '@material-ui/core';
 
-function App() {
+function FourthPage() {
     return (
         <>
         <Inputs />
@@ -50,4 +50,4 @@ function DisplayInputs(props) {
     )
 }
 
-export default App;
+export { FourthPage }

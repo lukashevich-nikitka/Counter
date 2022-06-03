@@ -2,7 +2,7 @@ import './App.css';
 import React, {useState} from 'react';
 
 
-function App() {
+function SecondPage() {
   const [state, setState] = useState([])
   const [idState, setId] = useState([{id: -1}])
   return <> 
@@ -52,4 +52,4 @@ function Screen(props) {
   return <div className='screen'>{props.value}</div>
 }
 
-// export default App;
+export { SecondPage };

@@ -2,7 +2,7 @@ import './App.css';
 import React, {useState} from 'react';
 
 
-function App() {
+function FirstPage() {
   return <> 
   <Counter />
   </>
@@ -27,4 +27,4 @@ function Screen(props) {
   return <div className='screen'>{props.value}</div>
 }
 
-// export default App;
+export { FirstPage };
