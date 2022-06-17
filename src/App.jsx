@@ -1,10 +1,10 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import FirstPage from './Task_1';
-import SecondPage from './Task_2';
-import ThirdPage from './Task_3';
-import FourthPage from './Task_4';
-import FivethPage from './Task_5';
+import FirstPage from './pages/first_task/components/Task_1';
+import SecondPage from './pages/second_task/components/Task_2';
+import ThirdPage from './pages/third_task/components/Task_3';
+import FourthPage from './pages/fourth_task/components/Task_4';
+import FivethPage from './pages/fiveth_task/components/Task_5';
 import './Main.css';
 
 function App() {
