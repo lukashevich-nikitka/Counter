@@ -5,6 +5,7 @@ import SecondPage from './pages/second_task/components/Task_2';
 import ThirdPage from './pages/third_task/components/Task_3';
 import FourthPage from './pages/fourth_task/components/Task_4';
 import FivethPage from './pages/fiveth_task/components/Task_5';
+import SixthPage from './pages/sixth_task/components/Sixth_task';
 import './Main.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <li><Link to="/third">Task_3</Link></li>
             <li><Link to="/fourth">Task_4</Link></li>
             <li><Link to="/fiveth">Task_5</Link></li>
+            <li><Link to="/sixth">Task_6</Link></li>
           </ul>
         </nav>
       </header>
@@ -27,6 +29,7 @@ function App() {
         <Route path="/third" element={<ThirdPage />} />
         <Route path="/fourth" element={<FourthPage />} />
         <Route path="/fiveth" element={<FivethPage />} />
+        <Route path="/sixth" element={<SixthPage />} />
         <Route path="*" element={<FirstPage />} />
       </Routes>
     </>
