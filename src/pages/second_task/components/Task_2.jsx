@@ -1,4 +1,4 @@
-import '../../../App.css';
+import '../../../styles/App.css';
 import React, { useState } from 'react';
 import MainCounter from './MainCounter';
 import Counter from './Counter';

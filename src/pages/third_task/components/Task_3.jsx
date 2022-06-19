@@ -1,4 +1,4 @@
-import '../../../App_Task3.css';
+import '../../../styles/App_Task3.css';
 import React from 'react';
 import Inputs from './Inputs';
 

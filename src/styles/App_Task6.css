@@ -1,0 +1,31 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.weather-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.search-button {
+    background-color: lightblue;
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid lightskyblue;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.search-button:hover {
+    background-color: azure;
+    border: 2px solid lightblue;
+}
+
+.search-input {
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid lightskyblue;
+}

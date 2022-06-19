@@ -4,7 +4,7 @@ import React from 'react';
 function SearchWeatherButton(props) {
   const { getData } = props;
   return (
-    <button type="submit" onClick={() => getData()}>Search</button>
+    <button type="submit" className="search-button" onClick={() => getData()}>Search</button>
   );
 }
 
