@@ -8,13 +8,24 @@ import SearchInput from './SearchInput';
 function SixthPage() {
   const [weatherData, setWeatherData] = useState('');
   const [town, setTown] = useState('');
+  useEffect(() => { if (localStorage.getItem('weatherData') === null) { setWeatherData('Заполните поле ниже'); } }, []);
+  useEffect(() => {
+    const defaultTown = localStorage.getItem('town');
+    setTown(defaultTown);
+    const defaultWeatherData = localStorage.getItem('weatherData');
+    setWeatherData(defaultWeatherData);
+  }, []);
+  useEffect(() => {
+    localStorage.setItem('town', town);
+    localStorage.setItem('weatherData', weatherData);
+  }, [town, weatherData]);
   useEffect(() => { document.title = town; });
   const getData = function () {
     if (town) {
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${town}&appid=186429c2dc77520abeefc7de9a9c8c15`;
       axios.get(url)
         .then((res) => {
-          const geo = Math.round(res.data.main.temp - 273); console.log(res);
+          const geo = Math.round(res.data.main.temp - 273);
           setWeatherData(`Погода в ${town} сейчас: ${geo}°C`);
         }).catch((err) => {
           setWeatherData(err.response.data.message);
