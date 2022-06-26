@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import '../../../styles/App_Task6.css';
 import WeatherDataDisplay from './WeatherDataDisplay';
@@ -20,8 +20,9 @@ function SixthPage() {
     localStorage.setItem('weatherData', weatherData);
   }, [town, weatherData]);
   useEffect(() => { document.title = town; });
-  const getData = function () {
+  const memoizedGetData = useCallback(() => {
     if (town) {
+      console.log('render func');
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${town}&appid=186429c2dc77520abeefc7de9a9c8c15`;
       axios.get(url)
         .then((res) => {
@@ -33,12 +34,12 @@ function SixthPage() {
     } else {
       setWeatherData('Заполните поле ниже!');
     }
-  };
+  }, [town]);
   return (
     <div className="weather-wrapper">
       <WeatherDataDisplay weatherData={weatherData} />
       <div className="search-wrapper">
-        <SearchWeatherButton getData={() => { getData(); }} />
+        <SearchWeatherButton getData={memoizedGetData} />
         <SearchInput getTown={(event) => setTown(event.target.value)} />
       </div>
     </div>
