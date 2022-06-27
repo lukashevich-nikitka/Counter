@@ -1,28 +1,28 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
-import '../../../styles/App_Task6.css';
-import WeatherDataDisplay from './WeatherDataDisplay';
-import SearchWeatherButton from './SearchWeatherButton';
-import SearchInput from './SearchInput';
+import '../../styles/App_Task6.css';
+import WeatherDataDisplay from './components/WeatherDataDisplay';
+import SearchWeatherButton from './components/SearchWeatherButton';
+import SearchInput from './components/SearchInput';
 
 function SixthPage() {
   const [weatherData, setWeatherData] = useState('');
   const [town, setTown] = useState('');
-  useEffect(() => { if (localStorage.getItem('weatherData') === null) { setWeatherData('Заполните поле ниже'); } }, []);
   useEffect(() => {
-    const defaultTown = localStorage.getItem('town');
-    setTown(defaultTown);
-    const defaultWeatherData = localStorage.getItem('weatherData');
-    setWeatherData(defaultWeatherData);
+    if (localStorage.getItem('weatherData') === null) { setWeatherData('Заполните поле ниже'); } else {
+      const defaultTown = localStorage.getItem('town');
+      setTown(defaultTown);
+      const defaultWeatherData = localStorage.getItem('weatherData');
+      setWeatherData(defaultWeatherData);
+    }
   }, []);
   useEffect(() => {
     localStorage.setItem('town', town);
     localStorage.setItem('weatherData', weatherData);
   }, [town, weatherData]);
-  useEffect(() => { document.title = town; });
+  useEffect(() => { document.title = town; }, [weatherData]);
   const memoizedGetData = useCallback(() => {
     if (town) {
-      console.log('render func');
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${town}&appid=186429c2dc77520abeefc7de9a9c8c15`;
       axios.get(url)
         .then((res) => {

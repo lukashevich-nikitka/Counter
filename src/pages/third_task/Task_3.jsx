@@ -1,6 +1,6 @@
-import '../../../styles/App_Task3.css';
+import '../../styles/App_Task3.css';
 import React from 'react';
-import Inputs from './Inputs';
+import Inputs from './components/Inputs';
 
 function ThirdPage() {
   return (

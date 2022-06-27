@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import React, { useState } from 'react';
 import { Button } from '@material-ui/core';
 import DisplayInputs from './DisplayInputs';
@@ -17,7 +18,7 @@ function Buttons(props) {
         variant="outlined"
         size="large"
         color="primary"
-        onClick={() => { setDataStates(); }}
+        onClick={setDataStates}
       >
         Push
       </Button>

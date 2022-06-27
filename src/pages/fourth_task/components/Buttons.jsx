@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import React, { useState } from 'react';
 import { Button } from '@material-ui/core';
 import DisplayInputs from './DisplayInputs';
@@ -12,7 +13,7 @@ function Buttons(props) {
   };
   return (
     <>
-      <Button variant="outlined" size="large" color="primary" onClick={() => { setDataStates(); }}>
+      <Button variant="outlined" size="large" color="primary" onClick={setDataStates}>
         Push
       </Button>
       <DisplayInputs login={loginState} password={passwordState} />

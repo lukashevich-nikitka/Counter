@@ -11,7 +11,7 @@ function Button(props) {
   };
   return (
     <>
-      <button type="submit" className="button" onClick={() => { setDataStates(); }}>Push</button>
+      <button type="submit" className="button" onClick={setDataStates}>Push</button>
       <DataDisplay login={loginState} password={passwordState} />
     </>
   );

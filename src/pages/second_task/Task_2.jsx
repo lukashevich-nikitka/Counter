@@ -1,7 +1,8 @@
-import '../../../styles/App.css';
+/* eslint-disable react/jsx-no-bind */
+import '../../styles/App.css';
 import React, { useState } from 'react';
-import MainCounter from './MainCounter';
-import Counter from './Counter';
+import MainCounter from './components/MainCounter';
+import Counter from './components/Counter';
 
 function SecondPage() {
   const [state, setState] = useState([]);
@@ -21,8 +22,8 @@ function SecondPage() {
   return (
     <>
       <MainCounter
-        addCounter={() => { addCounter(); }}
-        deleteCounter={() => { deleteCounter(); }}
+        addCounter={addCounter}
+        deleteCounter={deleteCounter}
         value={state.length}
       />
       {state.map((_, index) => (
